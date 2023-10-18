@@ -12,6 +12,7 @@ TodoSH is a task manager command line interface. The CLI is built with:
 - [Ora](https://github.com/sindresorhus/ora#readme).
 
 Its display is simple but colorful to help reading easily a long list of tasks. With TodoSH you can create tasks and subtasks and recursively. This means a subtask can hold a task and so forth. One of the key features of TodoSH is the ability to use one process to create a task followed by an intention to append as many subtasks as the user wants in a loop. The user can decide not to assign subtasks. In this case he is asked if he wants to create a new task.
+
 A tasks should have a title, but the description is optional. Regarding the description, the default text editor of the operating system is opened for writing. This is a convenient way to more easily write a description in several lines. In additon, a text description is aligned left and indented when displayed on the terminal. For more informations take a look at the examples above or the help of a command.
 
 ## Installation
