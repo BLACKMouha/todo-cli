@@ -3,13 +3,13 @@
 ## Description
 
 TodoSH is a task manager command line interface. The CLI is built with:
-    -- [NodeJS](https://nodejs.org),
-    -- [MongoDB](https://www.mongodb.com/),
-    -- [Mongoose](https://mongoosejs.com)
-    -- [CommanderJS](https://github.com/tj/commander.js#readme),
-    -- [InquirerJS](https://github.com/SBoudrias/Inquirer.js/blob/master/packages/inquirer/README.md),
-    -- [Chalk](https://github.com/chalk/chalk#readme),
-    -- [Ora](https://github.com/sindresorhus/ora#readme).
+- [NodeJS](https://nodejs.org),
+- [MongoDB](https://www.mongodb.com/),
+- [Mongoose](https://mongoosejs.com)
+- [CommanderJS](https://github.com/tj/commander.js#readme),
+- [InquirerJS](https://github.com/SBoudrias/Inquirer.js/blob/master/packages/inquirer/README.md),
+- [Chalk](https://github.com/chalk/chalk#readme),
+- [Ora](https://github.com/sindresorhus/ora#readme).
 
 Its display is simple but colorful to help reading easily a long list of tasks. With TodoSH you can create tasks and subtasks and recursively. This means a subtask can hold a task and so forth. One of the key feature of TodoSH is the ability to create then create as many subtasks as the user wants in a loop.
 A tasks should have a title, but the description is optional. Regarding the description, the default text editor of the operating system is opened for writing. This is a convenient way to more easily write a description in several lines. In additon, a text description is aligned left and indented when displayed on the terminal. For more informations take a look at the examples above or the help of a command.
@@ -17,18 +17,19 @@ A tasks should have a title, but the description is optional. Regarding the desc
 ## Installation
 
 This CLI works is cross-platform. It is built on Linux and tested on Windows and MacOS. To install it:
-    -- Clone the repository: ```bash git clone https://github.com/BLACKMouha/todo-cli```
-    -- Access the repository: ```bash cd todo-cli```
-    -- Install [NodeJS](https://nodejs.org)
-    -- Install [MongoDB](https://www.mongodb.com/)
-    -- Run: ```bash npm install```
-    -- Add permanently the following path in the PATH environnment variable
+
+- Clone the repository: ```bash git clone https://github.com/BLACKMouha/todo-cli```
+- Access the repository: ```bash cd todo-cli```
+- Install [NodeJS](https://nodejs.org)
+- Install [MongoDB](https://www.mongodb.com/)
+- Run: ```bash npm install```
+- Add permanently the following path in the PATH environnment variable
 **On Unix/Linux systems:** ```bash echo 'export PATH="$(npm prefix -g)/bin:$PATH"' | tee -a ~/.bash_profile```
 **On Windows:**
-    -- In the CMD, execute: ```bash npm prefix -g```
-    -- Add this path in the Windows PATH Environment Variable
-        -- If you need help, follow this [tutorial](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/) that explains how to add to Windows PATH Environment Variable.
-    -- Finally, run: ```bash npm link```
+- In the CMD, execute: ```bash npm prefix -g```
+- Add this path in the Windows PATH Environment Variable
+    -- If you need help, follow this [tutorial](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/) that explains how to add to Windows PATH Environment Variable.
+- Finally, run: ```bash npm link```
 **Warning:** when executing ```bash npm link```, you should be in repository otherwise, it might produce errors
 The command line name is **todo**.
 
