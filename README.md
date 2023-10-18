@@ -224,7 +224,7 @@ todo update -t
 
 Successfully connected to database!!!
 
-Type the updated properties. Press Enter if you don\'t want to update the data.
+Type the updated properties. Press Enter if you do not want to update the data.
 
 ? Update the name? Test#4: Updating the title of a task
 ? Update the Description? Received
@@ -268,7 +268,7 @@ todo update -s
 
 Successfully connected to database!!!
 
-? Update the status (choose None if you don\'t want to update the status)? completed
+? Update the status (choose None if you do not want to update the status)? completed
 
 🎉 Task completed. 🎉
 Disconnected from the database.
