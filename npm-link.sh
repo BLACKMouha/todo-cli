@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file_to_remove="/home/blackms05/.global-node-modules/bin/todo"
+file_to_remove="~/.global-node-modules/bin/todo"
 
 if [ -e "$file_to_remove" ]; then
     rm "$file_to_remove"
