@@ -17,7 +17,7 @@ A tasks should have a title, but the description is optional. Regarding the desc
 
 ## Installation
 
-This CLI works is cross-platform. It is built on Linux and tested on Windows and MacOS. To install it:
+This CLI is cross-platform. It is built on Linux and tested on Windows and MacOS. To install it:
 
 - Clone the repository: ```bash git clone https://github.com/BLACKMouha/todo-cli```
 - Access the repository: ```bash cd todo-cli```
