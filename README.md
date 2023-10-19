@@ -20,8 +20,8 @@ A tasks should have a title, but the description is optional. Regarding the desc
 
 This CLI is cross-platform. It is built on Linux and tested on Windows and MacOS. To install it:
 
-- Clone the repository: ```bash git clone https://github.com/BLACKMouha/todo-cli```
-- Access the repository: ```bash cd todo-cli```
+- Clone the repository: ```git clone https://github.com/BLACKMouha/todo-cli```
+- Access the repository: ```cd todo-cli```
 - Install [NodeJS](https://nodejs.org)
 - Install [MongoDB](https://www.mongodb.com/)
 - Start your MongoDB (**MongoDB should always be active!**)
@@ -38,6 +38,12 @@ This CLI is cross-platform. It is built on Linux and tested on Windows and MacOS
 ## Examples
 
 ### Calling todo to display the help
+
+```bash
+todo
+```
+
+Outputs:
 
 ```bash
 Usage: todo [options] [command]
@@ -81,7 +87,11 @@ or
 
 ```bash
 todo create --task
+```
 
+Outputs:
+
+```bash
 ? Enter the title of the task: Test#0: adding a new task
 ? Describe what you want to do: Received
 ? Do you want to add more tasks? (Y/n) n
@@ -105,7 +115,11 @@ or
 
 ```bash
 todo create --subtask
+```
 
+Outputs:
+
+```bash
 ? Enter the code of the parent task: zmCCKKb4qU
 Successfully connected to database!!!
 Task found!
@@ -133,7 +147,11 @@ or
 
 ```bash
 todo create --tasks-with-subtasks
+```
 
+Outputs:
+
+```bash
 ? Enter the title of the task: Test#2: adding a new task then its subtasks
 ? Describe what you want to do: Received
 ? Do you want to add a subtask? Yes
@@ -152,6 +170,12 @@ A task creation is first performed then subtask creation and it can be repeated 
 ### Filtering tasks
 
 Tasks are filtered by code, parent code, title and status. Filtering by title is the same as looking for tasks which titles contain the provided set of strings
+
+```bash
+todo find
+```
+
+Outputs:
 
 ```bash
 FYI: You can skip a question by pressing Enter
@@ -193,6 +217,11 @@ To delete task, its code is asked.
 
 ```bash
 todo delete
+```
+
+Outputs:
+
+```bash
 ? Enter the code of the task: -hDgTX5-ku
 
 Successfully connected to database!!!
@@ -221,7 +250,11 @@ This operation updates the title, description and parent task code of a task.
 
 ```bash
 todo update -t
+```
 
+Outputs:
+
+```bash
 ? Enter the code of the task: GBjjALTui9
 
 Successfully connected to database!!!
@@ -237,6 +270,12 @@ Disconnected from the database.
 ```
 
 The title and the description are updated.
+
+```bash
+todo find
+```
+
+Outputs:
 
 ```bash
 FYI: You can skip a question by pressing Enter
@@ -265,7 +304,11 @@ This one focuses completing a task and causes by the way its deletion process
 
 ```bash
 todo update -s
+```
 
+Outputs:
+
+```bash
 ? Enter the code of the task: GBjjALTui9
 
 Successfully connected to database!!!
@@ -278,6 +321,11 @@ Disconnected from the database.
 
 ```bash
 todo find
+```
+
+Outputs:
+
+```bash
 FYI: You can skip a question by pressing Enter
 
 ? Filter by task code: GBjjALTui9
