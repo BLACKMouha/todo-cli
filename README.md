@@ -24,7 +24,7 @@ This CLI is cross-platform. It is built on Linux and tested on Windows and MacOS
 - Access the repository: ```cd todo-cli```
 - Install [NodeJS](https://nodejs.org)
 - Install [MongoDB](https://www.mongodb.com/)
-- Start your MongoDB (**MongoDB should always be active!**)
+- Start your MongoDB (**MongoDB should always be active on port 27017 !**)
 - Run: ```bash npm install```
 - Add permanently the following path in the PATH environnment variable
   - **On Unix/Linux systems:** ```echo 'export PATH="$(npm prefix -g)/bin:$PATH"' | tee -a ~/.bash_profile```
