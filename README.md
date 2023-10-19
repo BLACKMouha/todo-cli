@@ -133,7 +133,7 @@ Successfully connected to database!!!
 Disconnected from the database.
 ```
 
-One must provide a task code. To get it, display the tasks with **todo list -a** or **todo find**
+One must provide a task code. To get it, display the tasks with ``todo list -a``` or ```todo find```
 
 #### Creating tasks and subtasks
 
