@@ -28,12 +28,12 @@ This CLI is cross-platform. It is built on Linux and tested on Windows and MacOS
 - Run: ```bash npm install```
 - Add permanently the following path in the PATH environnment variable
   - **On Unix/Linux systems:** ```echo 'export PATH="$(npm prefix -g)/bin:$PATH"' | tee -a ~/.bash_profile```
-    - **On Windows:**
-      - In the CMD, execute: ```npm prefix -g```
-      - Add this path in the Windows PATH Environment Variable
-        - If you need help, follow this [tutorial](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/) that explains how to add to Windows PATH Environment Variable.
-      - Finally, run: ```npm link```
-    - **Warning:** when executing ```npm link```, you should be in repository otherwise, it might produce errors
+  - **On Windows:**
+    - In the CMD, execute: ```npm prefix -g```
+    - Add this path in the Windows PATH Environment Variable
+    - If you need help, follow this [tutorial](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/) that explains how to add to Windows PATH Environment Variable.
+    - Finally, run: ```npm link```
+- **Warning:** when executing ```npm link```, you should be in repository otherwise, it might produce errors
 The command line name is **todo**.
 
 ## Examples
