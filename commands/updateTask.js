@@ -8,7 +8,7 @@ import Tasks from '../schema/TaskSchema.js'
 async function askUpdateQ(task) {
   try {
     const update = await inquirer.prompt([
-      { name: 'title', message: 'Update the name?', type: 'input', default: task.name },
+      { name: 'title', message: 'Update the title?', type: 'input', default: task.title },
       { name: 'detail', message: 'Update the Description?', type: 'editor', default: task.detail },
       { name: 'parentCode', message: 'Update the parent task code?', type: 'input', default: task.parentCode },
     ])
@@ -41,7 +41,7 @@ export default async function updateTask() {
       spinner.text = 'Updating the task...'
       spinner.start()
 
-      await Tasks.updateOne({ code: task.code }, update)
+      await Tasks.updateOne({ code: task.code }, { $set: update })
 
       spinner.stop()
 

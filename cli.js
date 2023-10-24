@@ -19,7 +19,7 @@ import updateStatusTask from './commands/updateStatusTask.js'
 
 
 program
-  .description(chalk.bgGrey('Your terminal task manager!'))
+  .description(chalk.bgGrey('TodoSH, task manager tool.'))
   .version('1.0.0')
 
 program

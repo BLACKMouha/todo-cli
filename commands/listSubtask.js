@@ -25,25 +25,25 @@ export default async function listSubtasks() {
 
       spinner.stop()
 
-      console.log(
-        chalk.cyanBright('Task Code: ') + parentTask.code + '\n' +
-        chalk.magentaBright('Parent Task Code: ') + parentTask.parentCode + '\n' +
-        chalk.blueBright('Name: ') + parentTask.title + '\n' +
-        chalk.yellowBright('Description: ') + printDetail('decription: ', parentTask.detail) + '\n'
-      )
+      let s = chalk.bgBlue(`${parentTask.code}`) + ' '
+      if (parentTask.parentCode) s += '-> ' + chalk.bgBlackBright(`${parentTask.parentCode}`) + ' '
+      else s += ' '
+      s += chalk.bold(chalk.bgRedBright(parentTask.title))
+      if (parentTask.detail) s += '\n' + chalk.blueBright(printDetail(parentTask.detail)) + '\n'
+      else s += '\n'
+      console.log(s)
 
       if (subtasks.length === 0) {
         console.log(chalk.blueBright('You do not have any subtasks yet!'))
       } else {
         subtasks.forEach(subtask => {
-          console.log(
-            chalk.cyanBright('Task Code: ') + subtask.code + '\n' +
-            chalk.magentaBright('Parent Task Code: ') + subtask.parentCode + '\n' +
-            chalk.blueBright('Name: ') + subtask.title + '\n' +
-            chalk.yellowBright('Description: ') + printDetail('decription: ', subtask.detail) + '\n'
-          )
+          let s = ' '.repeat(4) + chalk.bgBlue(subtask.code) + ' '
+          s += chalk.bold(chalk.bgRedBright(subtask.title))
+          if (subtask.detail) s += '\n' + chalk.blueBright(printDetail(subtask.detail)) + '\n'
+          else s += '\n'
+          console.log(s)
         })
-        console.log(chalk.bgBlue(`${subtasks.length} subtask(s) found!`));
+        console.log(chalk.yellow(`${subtasks.length} subtask(s) found!`));
       }
     }
     await disconnectDB()

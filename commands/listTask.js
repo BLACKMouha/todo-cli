@@ -18,14 +18,15 @@ export default async function listTasks() {
       console.log(chalk.blueBright('You do not have any tasks yet! Enjoy...!'))
     } else {
       tasks.forEach(task => {
-        console.log(
-          chalk.cyanBright('Task Code: ') + task.code + '\n' +
-          chalk.magentaBright('Parent Task Code: ') + task.parentCode + '\n' +
-          chalk.blueBright('Name: ') + task.title + '\n' +
-          chalk.yellowBright('Description: ') + printDetail('Decription:  ', task.detail) + '\n'
-        )
+        let s = chalk.bgBlue(`${task.code}`) + ' '
+        if (task.parentCode) s += chalk.gray('->') + ' ' + chalk.bgBlackBright(`${task.parentCode}`) + ' '
+
+        s += chalk.bold(chalk.bgRedBright(task.title))
+        if (task.detail) s += '\n' + chalk.blueBright(printDetail(task.detail)) + '\n'
+        else s += '\n'
+        console.log(s)
       })
-      console.log(chalk.bgBlue(`${tasks.length} task(s) found!`));
+      console.log(chalk.yellow(`${tasks.length} task(s) found!`));
     }
 
     await disconnectDB()

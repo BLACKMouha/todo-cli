@@ -20,20 +20,34 @@ export async function getTaskCode(message) {
 
     return answers
   } catch (error) {
-    console.log('❌ Something went wrong!\n', error)
+    console.log(chalk.redBright('❌ Something went wrong!\n'), error)
   }
 }
 
-export function printDetail(intro, TaskDetail) {
-  if (!TaskDetail || TaskDetail.trim() === '') return ''
+export function printDetail(taskDetail) {
+  let line = "";
+  let formattedText = "";
+  const words = taskDetail.split(" ");
+  const indentation = ' '.repeat(13)
 
-  const lines = TaskDetail.split('\n')
-  const indentation = ' '.repeat(intro.length)
-  let text = lines[0] + '\n'
-  for (let i = 1; i < lines.length; i++) {
-    text += `${indentation}${lines[i]}\n`
+  for (const word of words) {
+    if (line.length + word.length + 1 <= 80) {
+      if (line.length === 0) {
+        line = word;
+      } else {
+        line += " " + word;
+      }
+    } else {
+      formattedText += indentation + line + "\n";
+      line = word;
+    }
   }
-  return text
+
+  if (line) {
+    formattedText += indentation + line;
+  }
+
+  return formattedText;
 }
 
 export function handleError(error) {

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file_to_remove="~/.global-node-modules/bin/todo"
+file_to_remove="$(npm prefix -g)/bin/todo)"
 
 if [ -e "$file_to_remove" ]; then
     rm "$file_to_remove"
@@ -10,4 +10,5 @@ if [ -e "$file_to_remove" ]; then
     echo "**todo** command is a global now!"
 else
     echo "File $file_to_remove does not exist."
+    npm link
 fi

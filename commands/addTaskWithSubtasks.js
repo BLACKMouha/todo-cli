@@ -46,7 +46,7 @@ export default async function addTaskWithSubtask() {
 
     await connectDB()
 
-    let spinner = ora('Creating the todos...').start()
+    let spinner = ora('Creating the tasks...').start()
 
     for (let i = 0; i < allTasks.length; i++) {
       const response = allTasks[i]
@@ -54,7 +54,7 @@ export default async function addTaskWithSubtask() {
     }
 
     spinner.stop()
-    console.log(chalk.greenBright('Created the todos!'))
+    console.log(chalk.greenBright('Created the tasks!'))
 
     await disconnectDB()
   } catch (error) {

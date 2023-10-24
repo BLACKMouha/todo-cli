@@ -9,7 +9,11 @@ import { deleteTaskLoop } from './deleteTask.js'
 async function askStatusQ() {
   try {
     const update = await inquirer.prompt([
-      { name: 'status', message: 'Update the status (choose None if you don\'t want to update the status)?', type: 'list', choices: ['pending', 'completed', 'None'] }
+      {
+        name: 'status',
+        message: 'Update the status (choose None if you don\'t want to update the status)?',
+        type: 'list',
+        choices: ['pending', 'completed', 'None'] }
     ])
 
     return update

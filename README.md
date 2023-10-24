@@ -185,29 +185,14 @@ FYI: You can skip a question by pressing Enter
 ? Fitler by status None
 
 Successfully connected to database!!!
-Task Code: zmCCKKb4qU
-Parent Task Code: undefined
-Title: Test#0: adding a new task
-Description:
-Status: pending
 
-Task Code: 2ItU3y5FLp
-Parent Task Code: zmCCKKb4qU
-Title: Test#1: adding a subtask
-Description:
-Status: pending
+zmCCKKb4qU Test#0: adding a new task
 
-Task Code: GBjjALTui9
-Parent Task Code: undefined
-Title: Test#2: adding a new task then its subtasks
-Description:
-Status: pending
+2ItU3y5FLp -> zmCCKKb4qU Test#1: adding a subtask
 
-Task Code: -hDgTX5-ku
-Parent Task Code: GBjjALTui9
-Title: Test#3: adding a subtask immediately after its parent task creation
-Description:
-Status: pending
+GBjjALTui9 Test#2: adding a new task then its subtasks
+
+-hDgTX5-ku -> GBjjALTui9 Test#3: adding a subtask immediately after its parent task creation
 ```
 
 ### Deleting a task
@@ -286,19 +271,16 @@ FYI: You can skip a question by pressing Enter
 
 Successfully connected to database!!!
 
-Task Code: GBjjALTui9
-Parent Task Code: 
-Title: Test#4: Updating the title of a task
-Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+GBjjALTui9 Test#4: Updating the title of a task
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
              incididunt ut labore et dolore magna aliqua. Pharetra sit amet aliquam id diam
              maecenas ultricies mi eget. Sed egestas egestas fringilla phasellus faucibus
              scelerisque eleifend. Cum sociis natoque penatibus et. Viverra ipsum nunc
              aliquet bibendum. Quam vulputate dignissim suspendisse in. Odio morbi quis
              commodo odio aenean sed adipiscing diam donec.
-Status: pending
 ```
 
-### Update the status of a task
+#### Update the status of a task
 
 This one focuses completing a task and causes by the way its deletion process
 

@@ -22,14 +22,14 @@ async function askFindQ() {
 
 export default async function findTask() {
   try {
-    console.log('FYI: You can skip a question if you want')
+    console.log('FYI: You can skip a question by pressing Enter')
 
     const answers = await askFindQ()
     const filters = {}
 
     for (const key in answers) {
       if (answers[key]) {
-        if (key === 'name' && answers[key].trim() !== '') {
+        if (key === 'title' && answers[key].trim() !== '') {
           const regex = new RegExp(`.*${answers[key].trim()}.*`, 'i')
           filters[key] = { $regex: regex }
         } else if (key === 'status' && answers[key] === 'None') delete answers.status
@@ -38,8 +38,6 @@ export default async function findTask() {
         }
       }
     }
-
-    console.log(filters);
 
     await connectDB()
 
@@ -58,15 +56,15 @@ export default async function findTask() {
       console.log(chalk.blueBright('No task found!'))
     } else {
       tasks.forEach(task => {
-        console.log(
-          chalk.cyanBright('Task Code: ') + task.code + '\n' +
-          chalk.magentaBright('Parent Task Code: ') + task.parentCode + '\n' +
-          chalk.blueBright('Title: ') + task.title + '\n' +
-          chalk.yellowBright('Description: ') + printDetail('Decription:  ', task.detail) +
-          chalk.whiteBright('Status: ') + task.status + '\n'
-        )
+        let s = '\n' + chalk.bgBlue(`${task.code}`) + ' '
+        if (task.parentCode) s += chalk.gray('->') + ' ' + chalk.bgBlackBright(`${task.parentCode}`) + ' '
+
+        s += chalk.bold(chalk.bgRedBright(task.title))
+        if (task.detail) s += '\n' + chalk.blueBright(printDetail(task.detail)) + '\n'
+        else s += '\n'
+        console.log(s)
       })
-      console.log(chalk.bgBlue(`${tasks.length} task(s) found!`))
+      console.log(chalk.yellow(`${tasks.length} task(s) found!`))
     }
 
     await disconnectDB()
