@@ -227,7 +227,7 @@ Disconnected from the database.
 
 ### Updating a task
 
-To update task, its code is should be provided. But there is two kinds of update:
+To update a task, its code should be provided. But there is two kinds of update:
 
 #### Update a task
 
