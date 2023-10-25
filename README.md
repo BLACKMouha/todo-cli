@@ -27,7 +27,7 @@ This CLI is cross-platform. It is built on Linux and tested on Windows and MacOS
 - Start your MongoDB (**MongoDB should always be active on port 27017 !**)
 - Run: ```bash npm install```
 - Add permanently the following path in the PATH environnment variable
-  - **On Unix/Linux systems:** ```echo 'export PATH="$(npm prefix -g)/bin:$PATH"' | tee -a ~/.bash_profile```
+  - **On Unix/Linux systems:** ```echo 'export PATH="$(npm prefix -g)/bin:$PATH"' | tee -a ~/.bashrc; source ~/bashrc```
   - **On Windows:**
     - In the CMD, execute: ```npm prefix -g```
     - Add this path in the Windows PATH Environment Variable
