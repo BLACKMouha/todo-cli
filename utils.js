@@ -1,3 +1,4 @@
+import fs from 'fs'
 import chalk from "chalk";
 import inquirer from "inquirer";
 
@@ -57,4 +58,47 @@ export function handleError(error) {
 
 export function unknownCommandHandler(message) {
   console.log(message)
+}
+
+
+function loadConfig() {
+  try {
+    const configData = fs.readFileSync('config.json', 'utf-8');
+    return JSON.parse(configData);
+  } catch (err) {
+    console.error('Error loading configuration:', err);
+    return {};
+  }
+}
+
+export function getMongoURI() {
+  const config = loadConfig();
+  return config.mongodb_uri;
+}
+
+function saveConfig(config) {
+  fs.writeFileSync('config.json', JSON.stringify(config, null, 2));
+}
+
+async function askMongoUriQ(message) {
+  try {
+    const answers = await inquirer.prompt([
+      { name: 'mongoUri', message, type: 'input', default: getMongoURI() },
+    ])
+
+    answers.mongoUri = answers.mongoUri.trim()
+
+    return answers
+  } catch (error) {
+    console.log(chalk.redBright('❌ Something went wrong!\n'), error)
+  }
+}
+
+export async function setMongoURI() {
+  const mongoUriR = await askMongoUriQ()
+  const {mongoUri} = mongoUriR
+  const config = loadConfig()
+  config.mongodb_uri = mongoUri
+  saveConfig(config);
+  console.log('MongoDB URI updated successfully.')
 }
