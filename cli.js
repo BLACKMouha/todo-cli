@@ -13,7 +13,7 @@ import addTaskWithSubtask from './commands/addTaskWithSubtasks.js'
 import deleteTask from './commands/deleteTask.js'
 
 import updateTask from './commands/updateTask.js'
-import { unknownCommandHandler } from './utils.js'
+import { setMongoURI, unknownCommandHandler } from './utils.js'
 import findTask from './commands/findTask.js'
 import updateStatusTask from './commands/updateStatusTask.js'
 
@@ -62,5 +62,10 @@ program
   .command('delete')
   .description('Deletes a task.')
   .action(deleteTask)
+
+program
+  .command('set-mongo-uri')
+  .description('Updates the Mongo URI')
+  .action(setMongoURI)
 
 program.parse(process.argv)

@@ -1,18 +1,18 @@
-import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import ora from 'ora'
 import chalk from 'chalk'
-
-dotenv.config()
+import { getMongoURI } from '../utils.js'
 
 export async function connectDB() {
   try {
     const spinner = ora('Connecting to the database...').start()
-    await mongoose.connect(process.env.MONGO_URI)
+    const TODO_MONGO_URI = await getMongoURI()
+    await mongoose.connect(TODO_MONGO_URI)
     spinner.stop()
     // console.log(chalk.greenBright('Successfully connected to database!!!\n'))
   } catch (error) {
-    console.log(chalk.redBright('You probably need to install/start/configure MongoDB on your machine'));
+    console.error(error)
+    console.log(chalk.redBright('You probably need to install | start | configure MongoDB on your machine'));
     process.exit(1)
   }
 }
